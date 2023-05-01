@@ -2,7 +2,7 @@ import React from 'react';
 import bg from '../../../assets/banner/bg.png'
 const Banner = () => {
     return (
-        <div className='relative flex flex-col items-center justify-center mt-20 h-[500px]'>
+        <div className='relative flex flex-col items-center justify-center mt-20 h-[100vh]'>
             <div className='absolute inset-0 w-full bg-cover bg-center filter contrast-50' style={{ backgroundImage: `url(${bg})` }}></div>
             <div className='relative text-center'>
                 <h1 className='text-7xl font-raleway font-extrabold text-center text-white my-auto'>DELICIOUS FOOD</h1>
