@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const ChefRecipe = () => {
     const chefDetails = useLoaderData();
@@ -10,16 +11,15 @@ const ChefRecipe = () => {
     const handleFavouriteItem = (id) => {
         // console.log('clicked', id);
         const blockItem = recipeDetail.find((search) => search.id === id);
-
+        // console.log(blockItem)
+        toast.info(`${blockItem.name} is my favourite Recipe`)
         if (blockB.some((item) => item.id === id)) {
-            // Remove the item from blockB if it already exists
+
             setBlockB(blockB.filter((item) => item.id !== id));
         } else {
-            // Add the item to blockB if it doesn't exist
+
             setBlockB([...blockB, blockItem]);
         }
-
-        setClicked(true);
     };
     return (
         <div className='mt-40 mb-20 px-20'>
@@ -81,7 +81,7 @@ const ChefRecipe = () => {
                                             disabled={blockB.some((item) => item.id === detail.id)}
 
                                             className="bg-black w-40 rounded-md h-10 mt-5 text-white font-bold cursor-pointer
-                                            disabled:bg-red-500
+                                            disabled:bg-red-500 disabled:cursor-not-allowed
                                             ">Favourite</button>
                                     </td>
                                 </tr>
