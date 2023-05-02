@@ -6,6 +6,8 @@ import Blog from "../Pages/Blog/Blog";
 import Common from "../Pages/Common/Common";
 import ChefRecipe from "../Pages/ChefRecipe/ChefRecipe";
 import NotFound from "../NotFound/NotFound";
+import Login from "../Shared/Authentication/Login";
+import Register from "../Shared/Authentication/Register/Register";
 
 
 
@@ -32,10 +34,17 @@ const router = createBrowserRouter([
                 }
             },
 
-
             {
                 path: 'blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: 'login',
+                element: <Login></Login>
+            },
+            {
+                path: 'register',
+                element: <Register></Register>
             }
         ]
     }
