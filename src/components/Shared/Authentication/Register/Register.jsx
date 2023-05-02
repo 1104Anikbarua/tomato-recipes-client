@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 
 const Register = () => {
     const [error, setError] = useState('')
-    const { signUpUser, updateUser } = useContext(ChefContext);
+    const { signUpUser, updateUser, googleSignUp } = useContext(ChefContext);
 
     const handleRegisterUser = (event) => {
         console.log(event.target.name.value)

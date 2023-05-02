@@ -6,8 +6,10 @@ import { ChefContext } from '../../AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
 const Header = () => {
     const [show, setShow] = useState(false);
+    const [showName, setShowName] = useState(false)
 
     const { user, logOutUser } = useContext(ChefContext);
+    console.log(user)
 
     const handleSignOut = () => {
         logOutUser()
@@ -45,12 +47,27 @@ const Header = () => {
                 </li>
 
                 {
+                    user && <li className='mr-5'>
+                        <NavLink to={'login'} className={({ isActive }) => isActive ? 'true' : 'false'}
+                            onClick={() => handleSignOut()}
+                        >Logout</NavLink>
+                    </li>
+                }
+
+                {
                     user
                         ?
-                        <li className='mr-5'>
-                            <NavLink to={'login'} className={({ isActive }) => isActive ? 'true' : 'false'}
-                                onClick={() => handleSignOut()}
-                            >Logout</NavLink>
+                        <li className='flex flex-col items-center mr-5'
+                            onMouseEnter={() => setShowName(true)}
+                            onMouseLeave={() => setShowName(false)}
+                        >
+                            {
+                                !showName && <img
+                                    className='w-10 h-10 rounded-full cursor-pointer' src={user?.photoURL} alt="" />
+                            }
+                            {
+                                showName && <p className='text-lg text-white duration-700 ease-linear block'>{user?.displayName}</p>
+                            }
                         </li>
                         :
                         <li className='mr-5'>

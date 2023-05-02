@@ -16,6 +16,10 @@ const Login = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         // console.log(email, password)
+        if (email === '' || password === '') {
+            setError('Email and password cannot be empty')
+            return;
+        }
 
         logInUser(email, password)
             .then((result) => {
@@ -43,7 +47,7 @@ const Login = () => {
                         <span>Email</span>
                     </label>
                     <input className='bg-blue-100 outline-none rounded-md pl-1 py-1 placeholder:pl-2' type="email" name="email" id="email"
-                        required placeholder='Your Email' />
+                        placeholder='Your Email' />
                 </div>
 
                 <div className='flex flex-col'>
@@ -51,7 +55,7 @@ const Login = () => {
                         <span>Password</span>
                     </label>
                     <input className='bg-blue-100 outline-none rounded-md pl-1 py-1 placeholder:pl-2' type="password" name="password" id="password"
-                        required placeholder='Password' />
+                        placeholder='Password' />
                 </div>
 
                 {
