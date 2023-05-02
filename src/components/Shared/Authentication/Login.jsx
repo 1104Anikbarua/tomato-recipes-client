@@ -1,4 +1,7 @@
 import React from 'react';
+import Google from './Google/Google';
+import Github from './Github/Github';
+import { Link } from 'react-router-dom';
 // import loginLottie from '../../../assets/login.json'
 // import Lottie from 'lottie-react'
 
@@ -22,8 +25,11 @@ const Login = () => {
                 </div>
 
                 <input className='bg-black text-white font-raleway font-bold uppercase mt-5 py-1 rounded-md' type="submit" value="Login" />
-
+                <p>New To This Website please <Link className='text-blue-500' to={'/register'}>Register</Link></p>
             </form>
+
+            <Google></Google>
+            <Github></Github>
         </div>
     );
 };
