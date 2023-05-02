@@ -1,9 +1,25 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import logo from '../../../assets/logo/nav-logo.png'
 import { Link, NavLink } from 'react-router-dom';
 import { HiBars3, HiXMark } from "react-icons/hi2";
+import { ChefContext } from '../../AuthProvider/AuthProvider';
+import { toast } from 'react-toastify';
 const Header = () => {
     const [show, setShow] = useState(false);
+
+    const { user, logOutUser } = useContext(ChefContext);
+
+    const handleSignOut = () => {
+        logOutUser()
+            .then(() => {
+                toast.info('Logout successfully')
+            })
+            .catch((error) => {
+                const errorMessage = error.message
+                console.log(errorMessage)
+                toast.error('Something Went Wrong')
+            })
+    }
 
 
 
@@ -28,12 +44,19 @@ const Header = () => {
                     <NavLink to={'blog'} className={({ isActive }) => isActive ? 'true' : 'false'}>Blog</NavLink>
                 </li>
 
-                <li className='mr-5'>
-                    <NavLink to={'login'} className={({ isActive }) => isActive ? 'true' : 'false'}>Logout</NavLink>
-                </li>
-                <li className='mr-5'>
-                    <NavLink to={'login'} className={({ isActive }) => isActive ? 'true' : 'false'}>Login</NavLink>
-                </li>
+                {
+                    user
+                        ?
+                        <li className='mr-5'>
+                            <NavLink to={'login'} className={({ isActive }) => isActive ? 'true' : 'false'}
+                                onClick={() => handleSignOut()}
+                            >Logout</NavLink>
+                        </li>
+                        :
+                        <li className='mr-5'>
+                            <NavLink to={'login'} className={({ isActive }) => isActive ? 'true' : 'false'}>Login</NavLink>
+                        </li>
+                }
 
                 <li className='mr-5'>
                     <NavLink to={'register'} className={({ isActive }) => isActive ? 'true' : 'false'}>Register</NavLink>

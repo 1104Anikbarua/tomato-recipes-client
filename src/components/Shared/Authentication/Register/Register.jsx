@@ -62,7 +62,7 @@ const Register = () => {
                         <span>Photo Url</span>
                     </label>
                     <input className='bg-blue-100 outline-none rounded-md pl-1 py-1 placeholder:pl-2' type="text" name="photo" id="photo"
-                        placeholder='Photo Url' />
+                        required placeholder='Photo Url' />
                 </div>
 
                 <div className='flex flex-col'>
@@ -70,7 +70,7 @@ const Register = () => {
                         <span>Email</span>
                     </label>
                     <input className='bg-blue-100 outline-none rounded-md pl-1 py-1 placeholder:pl-2' type="email" name="email" id="email"
-                        placeholder='Your Email' />
+                        required placeholder='Your Email' />
                 </div>
 
                 <div className='flex flex-col'>
@@ -78,13 +78,13 @@ const Register = () => {
                         <span>Password</span>
                     </label>
                     <input className='bg-blue-100 outline-none rounded-md pl-1 py-1 placeholder:pl-2' type="password" name="password" id="password"
-                        placeholder='Password' />
+                        required placeholder='Password' />
                 </div>
                 {
                     error &&
                     <p className='text-red-500 font-raleway mt-2'>{error}</p>}
                 <input className='bg-black text-white font-raleway font-bold uppercase mt-5 py-1 rounded-md cursor-pointer' type="submit" value="Register" />
-                <p>Already have an account please <Link className='text-blue-500' to={'/login'}>Login</Link></p>
+                <p className='font-raleway font-medium mt-2'>Already have an account please <Link className='text-blue-500' to={'/login'}>Login</Link></p>
             </form>
             <Google></Google>
             <Github></Github>
