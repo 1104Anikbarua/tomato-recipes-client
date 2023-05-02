@@ -15,7 +15,7 @@ const Chef = () => {
                 setLoading(false)
             })
     }, [])
-    console.log(chefs, loading)
+    // console.log(chefs, loading)
     const navigate = useNavigate()
     const handleRecipesDetail = (id) => {
         navigate(`recipes/${id}`)
@@ -33,7 +33,7 @@ const Chef = () => {
                     key={chef.id} className='w-full mx-auto bg-white shadow-lg rounded-md p-5'>
                     <div>
                         <img className='w-full' src={chef.picture} alt="" />
-                        <h4 className='font-raleway font-extrabold text-xl'>Chef Name {chef.name}</h4>
+                        <h4 className='font-raleway font-extrabold text-xl'>Chef Name :{chef.name}</h4>
                         <p className='font-raleway font-medium text-xl'>Experience :{chef.experience} years</p>
                         <p className='font-raleway font-medium text-xl'>Recipies {chef.recipes}</p>
                         <p className='font-raleway font-medium text-xl'>Likes {chef.likes}</p>

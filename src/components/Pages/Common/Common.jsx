@@ -5,9 +5,7 @@ import Chef from '../Chef/Chef';
 import { useLoaderData, useNavigation } from 'react-router-dom';
 
 const Common = () => {
-    const data = useLoaderData();
-    // const navigation = useNavigation();
-    // console.log(navigation)
+    // const data = useLoaderData();
 
     return (
         <div>
