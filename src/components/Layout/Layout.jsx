@@ -5,6 +5,7 @@ import Blog from "../Pages/Blog/Blog";
 // import History from "../Pages/History/History";
 import Common from "../Pages/Common/Common";
 import ChefRecipe from "../Pages/ChefRecipe/ChefRecipe";
+import NotFound from "../NotFound/NotFound";
 
 
 
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <NotFound></NotFound>,
         children: [
             {
                 path: '/',

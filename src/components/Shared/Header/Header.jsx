@@ -23,18 +23,18 @@ const Header = () => {
                 </li>
 
                 <li className='mr-5'>
-                    <Link className='text-white font-raleway text-lg font-medium'>Blog</Link>
+                    <Link to={'/blog'} className='text-white font-raleway text-lg font-medium'>Blog</Link>
                 </li>
 
                 <li className='mr-5'>
-                    <Link className='text-white font-raleway text-lg font-medium'>Logout</Link>
+                    <Link to={'/login'} className='text-white font-raleway text-lg font-medium'>Logout</Link>
                 </li>
                 <li className='mr-5'>
-                    <Link className='text-white font-raleway text-lg font-medium'>Login</Link>
+                    <Link to={'/login'} className='text-white font-raleway text-lg font-medium'>Login</Link>
                 </li>
 
                 <li className='mr-5'>
-                    <Link className='text-white font-raleway text-lg font-medium'>Register</Link>
+                    <Link to={'/register'} className='text-white font-raleway text-lg font-medium'>Register</Link>
                 </li>
             </ul>
             <div className='md:hidden'

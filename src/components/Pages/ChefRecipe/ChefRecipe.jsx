@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 const ChefRecipe = () => {
     const chefDetails = useLoaderData();
+    const [clicked, setClicked] = useState(false);
     // console.log(chefDetails)
     const { picture, name, desc, experience, recipes, likes, recipeDetail } = chefDetails;
-    console.log(recipeDetail)
+    // console.log(recipeDetail)
+    const handleFavouriteItem = () => {
+        console.log('clicked')
+    }
     return (
         <div className='mt-40 mb-20 px-20'>
             <div className='flex flex-col lg:flex-row items-start justify-evenly'>
@@ -60,7 +64,12 @@ const ChefRecipe = () => {
                                         {detail.rating}
                                     </td>
                                     <td>
-                                        <button className="bg-black w-40 rounded-md h-10 mt-5 text-white font-bold">Favourite</button>
+                                        <button
+                                            onClick={() => handleFavouriteItem()}
+
+                                            disabled={clicked ? true : false}
+
+                                            className="bg-black w-40 rounded-md h-10 mt-5 text-white font-bold cursor-pointer">Favourite</button>
                                     </td>
                                 </tr>
                             </tbody>
