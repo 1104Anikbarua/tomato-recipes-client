@@ -3,7 +3,7 @@ import Marquee from 'react-fast-marquee';
 
 const Trusted = () => {
     return (
-        <div className='my-20 h-80 bg-black'>
+        <div className='my-20 h-full bg-black'>
             <h1 className='text-7xl font-raleway font-extrabold text-center text-white mb-5'>These Chef Previously Work For</h1>
 
             <Marquee direction='left' className='overflow-y-hidden'>
