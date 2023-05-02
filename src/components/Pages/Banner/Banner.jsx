@@ -7,7 +7,7 @@ const Banner = () => {
             <div className='relative text-center'>
                 <h1 className='text-7xl font-raleway font-extrabold text-center text-white my-auto'>DELICIOUS FOOD</h1>
                 <p className='text-5xl font-raleway font-medium text-white text-center'>Stay With Tomato</p>
-                <button className='bg-black w-40 rounded-md h-10 mt-5 text-white font-medium'>Click</button>
+                <button className='bg-black w-40 rounded-md h-10 mt-5 text-white font-bold text-sm'>Click</button>
             </div>
         </div>
 

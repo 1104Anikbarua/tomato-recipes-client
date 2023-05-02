@@ -4,6 +4,7 @@ import Blog from "../Pages/Blog/Blog";
 // import Banner from "../Pages/Banner/Banner";
 // import History from "../Pages/History/History";
 import Common from "../Pages/Common/Common";
+import ChefRecipe from "../Pages/ChefRecipe/ChefRecipe";
 
 
 
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
                 // loader: () => {
                 //     return fetch('http://localhost:5000/info')
                 // }
+            },
+            {
+                path: '/recipes/:id',
+                element: <ChefRecipe></ChefRecipe>
             },
 
 
