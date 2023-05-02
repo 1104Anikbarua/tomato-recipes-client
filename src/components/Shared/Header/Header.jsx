@@ -58,16 +58,16 @@ const Header = () => {
                     user
                         ?
                         <li className='flex flex-col items-center mr-5'
-                            onMouseEnter={() => setShowName(true)}
-                            onMouseLeave={() => setShowName(false)}
+                        // onMouseEnter={() => setShowName(true)}
+                        // onMouseLeave={() => setShowName(false)}
                         >
                             {
-                                !showName && <img
+                                !showName && <img title={user?.displayName}
                                     className='w-10 h-10 rounded-full cursor-pointer' src={user?.photoURL} alt="" />
                             }
-                            {
+                            {/* {
                                 showName && <p className='text-lg text-white duration-700 ease-linear block'>{user?.displayName}</p>
-                            }
+                            } */}
                         </li>
                         :
                         <li className='mr-5'>
