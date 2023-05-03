@@ -36,7 +36,7 @@ const Chef = () => {
 
                         <LazyLoad
                             height="290px"
-                            width='100%'
+                            // width='100%'
                             threshold={0.90}>
                             <img className='w-full h-72' src={chef.picture} alt="chef image" />
 
