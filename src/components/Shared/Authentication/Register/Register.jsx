@@ -70,8 +70,7 @@ const Register = () => {
         const typedEmail = event.target.value
         // console.log(typedEmail)
         setEmail(typedEmail)
-        if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(typedEmail)
-        ) {
+        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(typedEmail)) {
             setEmailError('Please provide a valid email');
         } else {
             setEmailError('');
