@@ -6,7 +6,7 @@ import { ChefContext } from '../../AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
 const Header = () => {
     const [show, setShow] = useState(false);
-    const [showName, setShowName] = useState(false)
+    // const [showName, setShowName] = useState(false)
 
     const { user, logOutUser } = useContext(ChefContext);
 
@@ -36,9 +36,9 @@ const Header = () => {
                     <NavLink to={'/'} className={({ isActive }) => isActive ? 'true' : 'false'}>Home</NavLink>
                 </li>
 
-                <li className='mr-5'>
+                {/* <li className='mr-5'>
                     <NavLink to={'/food'} className={({ isActive }) => isActive ? 'true' : 'false'}>Food</NavLink>
-                </li>
+                </li> */}
 
                 <li className='mr-5'>
                     <NavLink to={'blog'} className={({ isActive }) => isActive ? 'true' : 'false'}>Blog</NavLink>
@@ -60,7 +60,7 @@ const Header = () => {
                         // onMouseLeave={() => setShowName(false)}
                         >
                             {
-                                !showName && <img title={user?.displayName}
+                                <img title={user?.displayName}
                                     className='w-10 h-10 rounded-full cursor-pointer' src={user?.photoURL} alt="" />
                             }
                             {/* {
@@ -73,9 +73,11 @@ const Header = () => {
                         </li>
                 }
 
-                <li className='mr-5'>
-                    <NavLink to={'register'} className={({ isActive }) => isActive ? 'true' : 'false'}>Register</NavLink>
-                </li>
+                {
+                    !user && <li className='mr-5'>
+                        <NavLink to={'register'} className={({ isActive }) => isActive ? 'true' : 'false'}>Register</NavLink>
+                    </li>
+                }
             </ul>
             <div className='md:hidden'
                 onClick={() => setShow(!show)}>
