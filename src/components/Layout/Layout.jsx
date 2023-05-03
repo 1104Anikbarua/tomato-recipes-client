@@ -21,9 +21,6 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Common></Common>,
-                // loader: () => {
-                //     return fetch('http://localhost:5000/info')
-                // }
             },
             {
                 path: '/recipes/:id',
@@ -34,8 +31,7 @@ const router = createBrowserRouter([
                 </RequireAuth>,
                 loader: ({ params }) => {
                     const { id } = params;
-                    // console.log(id)
-                    return fetch(`http://localhost:5000/recipes/${id}`)
+                    return fetch(`https://batch-7-assignment-10-server-1104anikbarua.vercel.app/recipes/${id}`)
                 }
             },
 

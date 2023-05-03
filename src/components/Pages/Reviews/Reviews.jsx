@@ -7,7 +7,7 @@ const Reviews = () => {
     const [loading, setLoading] = useState(false)
     useEffect(() => {
         setLoading(true)
-        fetch('http://localhost:5000/reviews')
+        fetch('https://batch-7-assignment-10-server-1104anikbarua.vercel.app/reviews')
             .then(res => res.json())
             .then(data => {
                 setComments(data)

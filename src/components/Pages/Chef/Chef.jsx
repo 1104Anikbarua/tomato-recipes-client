@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import LoadingSpinner from '../../Shared/LoadingSpinner/LoadingSpinner';
 import { useNavigate } from 'react-router-dom';
 import LazyLoad from 'react-lazy-load';
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 const Chef = () => {
     const [loading, setLoading] = useState(false)
@@ -9,7 +11,7 @@ const Chef = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch('http://localhost:5000/info')
+        fetch('https://batch-7-assignment-10-server-1104anikbarua.vercel.app/info')
             .then(res => res.json())
             .then(data => {
                 setChefs(data)

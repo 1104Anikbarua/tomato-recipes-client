@@ -4,6 +4,8 @@ import google from '../../../assets/icon/googlee.png'
 import twitter from '../../../assets/icon/twitter.png'
 import instagram from '../../../assets/icon/instagram.png'
 import recentpost1 from '../../../assets/logo/thumb1.png'
+import { Link } from 'react-router-dom';
+import { AiOutlineSwapRight } from 'react-icons/ai';
 const Footer = () => {
     return (
         <footer className="bg-black text-white py-8 px-20">
@@ -12,19 +14,26 @@ const Footer = () => {
                     <div className="p-4">
                         <h3 className='font-raleway font-bold text-xl mb-5'>About us</h3>
                         <ul className="text-sm">
-                            <p>Terms & Policy</p>
+                            <p className='text-base font-medium'>
+                                Tomato Indian chef website offers great Indian Food in Hotels of its kind in a Five Star Hotel. The cuisine is great, both vegetarian and Non-vegetarian Indian Food.
+                            </p>
+                            <Link className='text-base font-medium flex items-end hover:text-orange-600'
+                                to={'/'}>Read More
+
+                                <AiOutlineSwapRight className='font-semibold text-xl'></AiOutlineSwapRight>
+                            </Link>
                         </ul>
                     </div>
                     <div className="p-4">
                         <h3 className='font-raleway font-bold text-xl mb-5'>Recent Post</h3>
-                        <div className='flex items-start gap-5 mb-5'>
+                        <div className='flex flex-col lg:flex-row items-start gap-5 mb-5'>
                             <img className='w-20 h-20 rounded-md' src={recentpost1} alt="" />
                             <div>
                                 <p>Hand picked ingredients for our best customers</p>
                                 <p>20-4-2023</p>
                             </div>
                         </div>
-                        <div className='flex items-start gap-5 mb-5'>
+                        <div className='flex flex-col lg:flex-row items-start gap-5 mb-5'>
                             <img className='w-20 h-20 rounded-md' src={recentpost1} alt="" />
                             <div>
                                 <p>Hand picked ingredients for our best customers</p>
@@ -34,20 +43,21 @@ const Footer = () => {
 
                     </div>
                     <div className="p-4">
-                        <h3 className="font-raleway text-lg font-medium mb-2">Contact Us</h3>
+                        <h3 className="font-raleway text-lg font-bold mb-5">Contact Us</h3>
                         <ul className="text-sm flex items-start">
                             <li className='mr-5'>
-                                <img className='w-10 h-10' src={facebook} alt="" />
+                                <img className='w-8 lg:w-10 h-8 lg:h-10' src={facebook} alt="" />
                             </li>
                             <li className='mr-5'>
-                                <img className='w-10 h-10' src={twitter} alt="" />
+                                <img className='w-8 lg:w-10 h-8 lg:h-10' src={twitter} alt="" />
                             </li>
                             <li className='mr-5'>
-                                <img className='w-10 h-10' src={instagram} alt="" />
+                                <img className='w-8 lg:w-10 h-8 lg:h-10' src={instagram} alt="" />
                             </li>
                             <li className='mr-5'>
-                                <img className='w-10 h-10' src={google} alt="" />
+                                <img className='w-8 lg:w-10 h-8 lg:h-10' src={google} alt="" />
                             </li>
+
                         </ul>
                     </div>
                 </div>
