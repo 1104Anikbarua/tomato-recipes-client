@@ -22,7 +22,7 @@ const ChefRecipe = () => {
         }
     };
     return (
-        <div className='mt-40 mb-20 px-20'>
+        <div className='mt-40 mb-20 lg:px-20'>
             <div className='flex flex-col lg:flex-row items-start justify-evenly'>
                 <div className='w-full'>
                     <img className='w-full max-w-lg' src={picture} alt="" />

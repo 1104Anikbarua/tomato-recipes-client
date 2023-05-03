@@ -9,7 +9,6 @@ const Header = () => {
     const [showName, setShowName] = useState(false)
 
     const { user, logOutUser } = useContext(ChefContext);
-    console.log(user)
 
     const handleSignOut = () => {
         logOutUser()
@@ -18,7 +17,6 @@ const Header = () => {
             })
             .catch((error) => {
                 const errorMessage = error.message
-                console.log(errorMessage)
                 toast.error('Something Went Wrong')
             })
     }
