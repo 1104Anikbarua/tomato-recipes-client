@@ -30,7 +30,7 @@ const Chef = () => {
 
 
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full mx-auto gap-5 my-20 lg:px-20'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full mx-auto gap-5 my-20 px-5 lg:px-20'>
             {
                 chefs?.map((chef) => <div
                     key={chef.id} className='w-full mx-auto bg-white shadow-lg rounded-md p-5'>
