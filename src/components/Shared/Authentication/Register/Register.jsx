@@ -2,49 +2,48 @@ import React, { useContext, useState } from 'react';
 import { ChefContext } from '../../../AuthProvider/AuthProvider';
 import Google from '../Google/Google';
 import Github from '../Github/Github';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Register = () => {
     const [error, setError] = useState('')
-    const { signUpUser, updateUser, googleSignUp } = useContext(ChefContext);
+    const { signUpUser, updateUser, setReload } = useContext(ChefContext);
+
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state || '/';
 
     const handleRegisterUser = (event) => {
-        console.log(event.target.name.value)
         event.preventDefault();
         const name = event.target.name.value;
         const photo = event.target.photo.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        // console.log(name, photo, email, password)
         signUpUser(email, password)
             .then((result) => {
                 const user = result.user;
-                console.log(user)
                 toast.success('Successfully Registered')
                 setError('')
                 updateUser(name, photo)
                     .then(() => {
                         toast.info(`${name} is set as Display Name`)
+                        setReload(new Date().getTime())
                     })
-                    .catch(() => {
+                    .catch((error) => {
+                        const errorMessage = error.message;
+                        console.log(errorMessage)
                         toast.error('Something Went Wrong')
                     })
+                navigate(from, { replace: true })
             })
             .catch((error) => {
                 const errorMessage = error.message;
                 setError(errorMessage)
-                console.log(errorMessage)
             })
         event.target.reset()
 
     }
-
-
-
-
-
-
 
     return (
         <div className='mt-40 mb-20 w-full max-w-sm mx-auto'>
@@ -54,7 +53,7 @@ const Register = () => {
                     <label className='text-lg font-raleway font-semibold mb-2' htmlFor="name">
                         <span>Name</span>
                     </label>
-                    <input className='bg-blue-100 outline-none rounded-md pl-1 py-1 placeholder:pl-2' type="text" name="name" id="name" placeholder='Your Name' />
+                    <input className='bg-blue-100 outline-none rounded-md pl-1 py-1 placeholder:pl-2' type="text" name="name" id="name" required placeholder='Your Name' />
                 </div>
 
                 <div className='flex flex-col'>

@@ -6,8 +6,9 @@ import Blog from "../Pages/Blog/Blog";
 import Common from "../Pages/Common/Common";
 import ChefRecipe from "../Pages/ChefRecipe/ChefRecipe";
 import NotFound from "../NotFound/NotFound";
-import Login from "../Shared/Authentication/Login";
+import Login from "../Shared/Authentication/Login/Login";
 import Register from "../Shared/Authentication/Register/Register";
+import RequireAuth from "../Shared/Authentication/RequireAuth/RequireAuth";
 
 
 
@@ -26,7 +27,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/recipes/:id',
-                element: <ChefRecipe></ChefRecipe>,
+                element: <RequireAuth>
+
+                    <ChefRecipe></ChefRecipe>
+
+                </RequireAuth>,
                 loader: ({ params }) => {
                     const { id } = params;
                     // console.log(id)

@@ -1,19 +1,24 @@
 import React, { useContext } from 'react';
 import github from '../../../../assets/icon/github.png';
 import { ChefContext } from '../../../AuthProvider/AuthProvider';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Github = () => {
     const { githubSignUp } = useContext(ChefContext);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/'
 
     const handleSignUpGithub = () => {
         githubSignUp()
             .then((result) => {
                 const user = result.user;
-                console.log(user)
+                navigate(from, { replace: true })
             })
             .catch((error) => {
                 const errorMessage = error.message;
-                console.log(errorMessage)
             })
     }
 

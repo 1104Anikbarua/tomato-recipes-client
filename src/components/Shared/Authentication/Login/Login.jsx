@@ -1,21 +1,22 @@
 import React, { useContext, useState } from 'react';
-import Google from './Google/Google';
-import Github from './Github/Github';
-import { Link } from 'react-router-dom';
-import { ChefContext } from '../../AuthProvider/AuthProvider';
+import Google from '../Google/Google';
+import Github from '../Github/Github';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { ChefContext } from '../../../AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
-// import loginLottie from '../../../assets/login.json'
-// import Lottie from 'lottie-react'
 
 const Login = () => {
     const [error, setError] = useState('');
     const { logInUser } = useContext(ChefContext);
 
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
     const handleUserLogIn = (event) => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
-        // console.log(email, password)
         if (email === '' || password === '') {
             setError('Email and password cannot be empty')
             return;
@@ -24,17 +25,17 @@ const Login = () => {
         logInUser(email, password)
             .then((result) => {
                 const user = result.user;
-                console.log(user)
                 toast.success('Logged in Successful')
                 setError('')
+                navigate(from, { replace: true })
             })
             .catch((error) => {
                 const errorMessage = error.message;
                 setError(errorMessage)
-                console.log(errorMessage)
             })
         event.target.reset()
     }
+
 
 
     return (
@@ -62,7 +63,7 @@ const Login = () => {
                     error &&
                     <p className='text-red-500 font-raleway mt-2'>{error}</p>}
                 <input className='bg-black text-white font-raleway font-bold uppercase mt-5 py-1 rounded-md cursor-pointer' type="submit" value="Login" />
-                <p className='font-raleway font-medium mt-2'>New To This Website please <Link className='text-blue-500' to={'/register'}>Register</Link></p>
+                <p className='font-raleway font-medium mt-2'>New To This Website please <Link state={from} className='text-blue-500' to={'/register'}>Register</Link></p>
             </form>
 
             <Google></Google>

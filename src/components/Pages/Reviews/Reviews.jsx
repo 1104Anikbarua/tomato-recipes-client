@@ -1,13 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import LoadingSpinner from '../../Shared/LoadingSpinner/LoadingSpinner';
 const Reviews = () => {
     const [comments, setComments] = useState([])
+    const [loading, setLoading] = useState(false)
     useEffect(() => {
+        setLoading(true)
         fetch('http://localhost:5000/reviews')
             .then(res => res.json())
-            .then(data => setComments(data))
+            .then(data => {
+                setComments(data)
+                setLoading(false)
+            })
     }, [])
+
+    if (loading) {
+        return <LoadingSpinner></LoadingSpinner>
+    }
 
     const responsive = {
         desktop: {
@@ -35,7 +45,7 @@ const Reviews = () => {
                 draggable={true}
                 swipeable={true}
                 containerClass='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'
-                itemClass='px-5'
+                itemClass='px-5 py-5'
             >
                 {
                     comments.map((review) => {
@@ -53,7 +63,7 @@ const Reviews = () => {
                         </div>
                     })
                 }
-            </Carousel>;
+            </Carousel>
         </div >
     );
 };

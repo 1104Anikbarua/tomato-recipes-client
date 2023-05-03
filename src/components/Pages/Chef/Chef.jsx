@@ -32,7 +32,7 @@ const Chef = () => {
                 chefs?.map((chef) => <div
                     key={chef.id} className='w-full mx-auto bg-white shadow-lg rounded-md p-5'>
                     <div>
-                        <img className='w-full' src={chef.picture} alt="" />
+                        <img className='w-full h-72' src={chef.picture} alt="" />
                         <h4 className='font-raleway font-extrabold text-xl'>Chef Name :{chef.name}</h4>
                         <p className='font-raleway font-medium text-xl'>Experience :{chef.experience} years</p>
                         <p className='font-raleway font-medium text-xl'>Recipies {chef.recipes}</p>

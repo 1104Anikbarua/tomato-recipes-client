@@ -1,18 +1,24 @@
 import React, { useContext } from 'react';
 import google from '../../../../assets/icon/googlee.png'
 import { ChefContext } from '../../../AuthProvider/AuthProvider';
+import { useLocation, useNavigate } from 'react-router-dom';
 const Google = () => {
-
     const { googleSignUp } = useContext(ChefContext);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/'
+
     const handleSingUpGoogle = () => {
         googleSignUp()
             .then((result) => {
                 const user = result.user;
                 console.log(user)
+                navigate(from, { replace: true })
             })
             .catch((error) => {
                 const errorMessage = error.message;
-                console.log(errorMessage)
             })
     }
 
