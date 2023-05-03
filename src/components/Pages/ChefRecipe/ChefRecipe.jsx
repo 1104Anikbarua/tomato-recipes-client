@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { SlLike } from 'react-icons/sl'
+import { FcLike } from 'react-icons/fc'
 
 const ChefRecipe = () => {
     const chefDetails = useLoaderData();
@@ -24,7 +25,7 @@ const ChefRecipe = () => {
             setBlockB([...blockB, blockItem]);
         }
     };
-    console.log(recipeDetail)
+    // console.log(recipeDetail)
     return (
         <div className='mt-40 mb-20 px-5 lg:px-20'>
             <div className='flex flex-col lg:flex-row items-start justify-evenly'>
@@ -108,8 +109,10 @@ const ChefRecipe = () => {
                                             disabled={blockB.some((item) => item?.id === detail?.id)}
 
                                             className="bg-black w-40 rounded-md h-10 mt-5 text-white font-bold cursor-pointer
-                                            disabled:bg-red-500 disabled:cursor-not-allowed
-                                            ">Favourite</button>
+                                            disabled:bg-opacity-50 disabled:cursor-not-allowed flex items-center justify-center
+                                            ">Favourite
+                                            <FcLike className='text-xl ml-2'></FcLike>
+                                        </button>
                                     </td>
                                 </tr>
                             </tbody>
