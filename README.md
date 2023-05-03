@@ -10,3 +10,4 @@
 * Responsive for mobile&Desktop
 
 # Live Website Link
+open https://recipe-site-700d0.web.app/
