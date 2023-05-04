@@ -5,9 +5,15 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ChefContext } from '../../../AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
 import { HiEye, HiEyeSlash } from 'react-icons/hi2';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const Login = () => {
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
     const [show, setShow] = useState(false)
     const [error, setError] = useState('');
     const { logInUser, logTry } = useContext(ChefContext);

@@ -4,8 +4,15 @@ import Google from '../Google/Google';
 import Github from '../Github/Github';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const Register = () => {
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState('')
