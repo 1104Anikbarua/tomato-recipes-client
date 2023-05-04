@@ -3,6 +3,7 @@ import facebook from '../../../assets/icon/facebook.png'
 import google from '../../../assets/icon/googlee.png'
 import twitter from '../../../assets/icon/twitter.png'
 import instagram from '../../../assets/icon/instagram.png'
+import pinterest from '../../../assets/icon/pinterest.png'
 import recentpost1 from '../../../assets/logo/thumb1.png'
 import { Link } from 'react-router-dom';
 import { AiOutlineSwapRight } from 'react-icons/ai';
@@ -47,39 +48,28 @@ const Footer = () => {
                         <ul className="text-sm flex items-start">
                             <li className='mr-5'>
                                 <img
-                                    data-aos="fade-right"
-                                    data-aos-easing="ease-in-sine"
-                                    data-aos-duration="500"
-                                    data-aos-delay="100"
 
                                     className='w-8 lg:w-10 h-8 lg:h-10' src={facebook} alt="" />
                             </li>
                             <li className='mr-5'>
                                 <img
-                                    data-aos="fade-right"
-                                    data-aos-easing="ease-in-sine"
-                                    data-aos-duration="500"
-                                    data-aos-delay="400"
 
                                     className='w-8 lg:w-10 h-8 lg:h-10' src={twitter} alt="" />
                             </li>
                             <li className='mr-5'>
                                 <img
-                                    data-aos="fade-right"
-                                    data-aos-easing="ease-in-sine"
-                                    data-aos-duration="500"
-                                    data-aos-delay="700"
 
                                     className='w-8 lg:w-10 h-8 lg:h-10' src={instagram} alt="" />
                             </li>
                             <li className='mr-5'>
                                 <img
-                                    data-aos="fade-right"
-                                    data-aos-easing="ease-in-sine"
-                                    data-aos-duration="500"
-                                    data-aos-delay="1100"
 
                                     className='w-8 lg:w-10 h-8 lg:h-10' src={google} alt="" />
+                            </li>
+                            <li className='mr-5'>
+                                <img
+
+                                    className='w-8 lg:w-10 h-8 lg:h-10' src={pinterest} alt="" />
                             </li>
 
                         </ul>
