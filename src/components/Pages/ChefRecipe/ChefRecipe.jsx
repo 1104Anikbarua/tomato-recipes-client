@@ -35,7 +35,7 @@ const ChefRecipe = () => {
     // console.log(recipeDetail)
     return (
         <div className='mt-40 mb-20 px-5 lg:px-20'>
-            <div className='flex flex-col lg:flex-row items-start justify-evenly'>
+            <div className='flex flex-col lg:flex-row items-start justify-evenly lg:gap-5'>
                 <div
                     data-aos="zoom-in"
                     data-aos-easing="ease-in-sine"
