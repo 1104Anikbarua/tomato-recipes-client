@@ -38,7 +38,14 @@ const Reviews = () => {
     };
     return (
         <div className='bg-black my-20 lg:px-20 text-center'>
-            <h1 className='text-7xl font-raleway font-extrabold text-center text-white mb-5'>what some clients say</h1>
+            <h1
+                data-aos="zoom-in"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="2000"
+                data-aos-delay="100"
+
+
+                className='text-7xl font-raleway font-extrabold text-center text-white mb-5'>what some clients say</h1>
 
             <Carousel
                 responsive={responsive}
@@ -50,15 +57,48 @@ const Reviews = () => {
                 {
                     comments.map((review) => {
                         return <div
+                            data-aos="zoom-in"
+                            data-aos-easing="ease-in-sine"
+                            data-aos-duration="2000"
+                            data-aos-delay="100"
+
                             key={review?.id}
                             className="bg-white shadow-md rounded-md p-6 w-full max-w-sm h-full">
                             <div className="flex flex-col items-center">
-                                <img src={review?.image} alt="User Avatar" className="w-10 h-10 rounded-full mr-4" />
+                                <img
+
+                                    data-aos="zoom-in"
+                                    data-aos-easing="ease-in-sine"
+                                    data-aos-duration="3000"
+                                    data-aos-delay="300"
+
+
+
+                                    src={review?.image} alt="User Avatar" className="w-10 h-10 rounded-full mr-4" />
                                 <div>
-                                    <h3 className="text-lg font-medium">{review?.name}</h3>
-                                    <p className="text-gray-500 text-sm">{review?.date}</p>
+                                    <h3
+                                        data-aos="zoom-in"
+                                        data-aos-easing="ease-in-sine"
+                                        data-aos-duration="3000"
+                                        data-aos-delay="700"
+
+                                        className="text-lg font-medium">{review?.name}</h3>
+                                    <p
+                                        data-aos="zoom-in"
+                                        data-aos-easing="ease-in-sine"
+                                        data-aos-duration="3000"
+                                        data-aos-delay="1100"
+
+                                        className="text-gray-600 text-sm">{review?.date}</p>
                                 </div>
-                                <p>{review.short_description}</p>
+
+                                <p
+                                    data-aos="zoom-in"
+                                    data-aos-easing="ease-in-sine"
+                                    data-aos-duration="3000"
+                                    data-aos-delay="1500"
+
+                                    className="text-gray-600 text-sm">{review.short_description}</p>
                             </div>
                         </div>
                     })

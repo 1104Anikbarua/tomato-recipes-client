@@ -9,11 +9,12 @@ import { HiEye, HiEyeSlash } from 'react-icons/hi2';
 const Login = () => {
     const [show, setShow] = useState(false)
     const [error, setError] = useState('');
-    const { logInUser } = useContext(ChefContext);
+    const { logInUser, logTry } = useContext(ChefContext);
 
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
+
 
     const handleUserLogIn = (event) => {
         event.preventDefault();
@@ -24,16 +25,40 @@ const Login = () => {
             return;
         }
         logInUser(email, password)
-            .then((result) => {
-                const user = result.user;
-                toast.success('Logged in Successful')
-                setError('')
-                navigate(from, { replace: true })
+            .then((response) => {
+                console.log(response)
+                // console.log(response.status)
+                if (response.status === 200) {
+                    logTry(email, password)
+                        .then((result) => {
+                            toast.success('Logged in Successful')
+                            setError('')
+                            navigate(from, { replace: true })
+                        })
+                        .catch((e) => {
+                            console.log(e)
+                        })
+                }
             })
             .catch((error) => {
-                const errorMessage = error.message;
-                setError(errorMessage)
+                // console.log(error.response.data)
+                const data = error?.response?.data;
+                const message = data?.error?.message;
+                // console.log(message)
+                setError(message)
             })
+
+        // .then((result) => {
+        //     const user = result.user;
+        //     toast.success('Logged in Successful')
+        //     setError('')
+        //     navigate(from, { replace: true })
+        // })
+        // .catch((error) => {
+        //     console.log(error)
+        //     const errorMessage = error.message;
+        //     setError(errorMessage)
+        // })
         event.target.reset()
     }
 

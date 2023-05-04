@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import auth from '../Firebase/Firebase.init';
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import axios from 'axios';
 
 
 export const ChefContext = createContext(null);
@@ -19,8 +20,18 @@ const AuthProvider = ({ children }) => {
     }
     const logInUser = (email, password) => {
         setLoading(true)
+        const postData = {
+            email, password, returnSecureToken: true
+        }
+        return axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAgdbj5JH6Wd3Dks_Q3Li-4oJRcKpYziWI`, postData)
+        // return signInWithEmailAndPassword(auth, email, password)
+    }
+
+    const logTry = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
+
     const updateUser = (name, photo) => {
         // setLoading(true)
         return updateProfile(auth.currentUser, {
@@ -61,7 +72,8 @@ const AuthProvider = ({ children }) => {
         githubSignUp,
         user,
         loading,
-        setReload
+        setReload,
+        logTry
     }
 
     return (

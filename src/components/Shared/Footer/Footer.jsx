@@ -46,16 +46,40 @@ const Footer = () => {
                         <h3 className="font-raleway text-lg font-bold mb-5">Contact Us</h3>
                         <ul className="text-sm flex items-start">
                             <li className='mr-5'>
-                                <img className='w-8 lg:w-10 h-8 lg:h-10' src={facebook} alt="" />
+                                <img
+                                    data-aos="fade-right"
+                                    data-aos-easing="ease-in-sine"
+                                    data-aos-duration="500"
+                                    data-aos-delay="100"
+
+                                    className='w-8 lg:w-10 h-8 lg:h-10' src={facebook} alt="" />
                             </li>
                             <li className='mr-5'>
-                                <img className='w-8 lg:w-10 h-8 lg:h-10' src={twitter} alt="" />
+                                <img
+                                    data-aos="fade-right"
+                                    data-aos-easing="ease-in-sine"
+                                    data-aos-duration="500"
+                                    data-aos-delay="400"
+
+                                    className='w-8 lg:w-10 h-8 lg:h-10' src={twitter} alt="" />
                             </li>
                             <li className='mr-5'>
-                                <img className='w-8 lg:w-10 h-8 lg:h-10' src={instagram} alt="" />
+                                <img
+                                    data-aos="fade-right"
+                                    data-aos-easing="ease-in-sine"
+                                    data-aos-duration="500"
+                                    data-aos-delay="700"
+
+                                    className='w-8 lg:w-10 h-8 lg:h-10' src={instagram} alt="" />
                             </li>
                             <li className='mr-5'>
-                                <img className='w-8 lg:w-10 h-8 lg:h-10' src={google} alt="" />
+                                <img
+                                    data-aos="fade-right"
+                                    data-aos-easing="ease-in-sine"
+                                    data-aos-duration="500"
+                                    data-aos-delay="1100"
+
+                                    className='w-8 lg:w-10 h-8 lg:h-10' src={google} alt="" />
                             </li>
 
                         </ul>
