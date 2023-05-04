@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react';
 import logo from '../../../assets/logo/nav-logo.png'
 import { Link, NavLink } from 'react-router-dom';
-import { HiBars3, HiXMark } from "react-icons/hi2";
 import { ChefContext } from '../../AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
+import Hamburger from 'hamburger-react';
+
+
 const Header = () => {
     const [show, setShow] = useState(false);
-    // const [showName, setShowName] = useState(false)
+    const [isOpen, setOpen] = useState(false)
 
     const { user, logOutUser } = useContext(ChefContext);
 
@@ -20,8 +22,6 @@ const Header = () => {
                 toast.error('Something Went Wrong')
             })
     }
-
-
 
     return (
         <div className='flex items-center justify-between bg-black shadow-md fixed top-0 right-0 left-0 h-20 md:px-20 z-20'>
@@ -82,13 +82,9 @@ const Header = () => {
             <div className='md:hidden'
                 onClick={() => setShow(!show)}>
 
-                {
-                    show
-                        ?
-                        <HiXMark className='w-8 h-8 text-white cursor-pointer'></HiXMark>
-                        :
-                        <HiBars3 className='w-8 h-8 text-white cursor-pointer'></HiBars3>
-                }
+                <Hamburger
+                    color='white'
+                    toggled={isOpen} toggle={setOpen} />
             </div>
         </div >
     );

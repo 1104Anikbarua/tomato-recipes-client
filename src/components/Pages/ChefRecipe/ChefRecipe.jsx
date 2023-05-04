@@ -230,6 +230,8 @@ const ChefRecipe = () => {
                                         className='text-center' title={detail?.rating}>
 
                                         <Rating
+
+
                                             style={{ width: 150 }}
                                             value={Math.round(detail?.rating) || 0}
                                             readOnly

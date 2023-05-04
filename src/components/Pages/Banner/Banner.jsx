@@ -11,7 +11,7 @@ const Banner = () => {
                     data-aos-duration='1000'
                     data-aos-delay='200'
 
-                    className='text-7xl font-raleway font-extrabold text-center text-white my-auto'>DELICIOUS FOOD</h1>
+                    className='text-6xl lg:text-7xl font-raleway font-extrabold text-center text-white my-auto'>DELICIOUS FOOD</h1>
 
                 <p
                     data-aos='zoom-in-up'
