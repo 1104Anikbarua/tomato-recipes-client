@@ -168,7 +168,13 @@ const ChefRecipe = () => {
                                 key={index}
                             >
                                 <tr>
-                                    <th>
+                                    <th
+                                        data-aos="fade-down"
+                                        data-aos-easing="ease-in-sine"
+                                        data-aos-duration="1000"
+                                        data-aos-delay="100"
+
+                                    >
                                         {index + 1}
                                     </th>
                                     <td>
