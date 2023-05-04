@@ -7,6 +7,9 @@ import pinterest from '../../../assets/icon/pinterest.png'
 import recentpost1 from '../../../assets/logo/thumb1.png'
 import { Link } from 'react-router-dom';
 import { AiOutlineSwapRight } from 'react-icons/ai';
+import phone from '../../../assets/icon/smartphone.png'
+import message from '../../../assets/icon/text.png'
+import location from '../../../assets/icon/placeholder.png'
 const Footer = () => {
     return (
         <footer className="bg-black text-white py-8 px-5 lg:px-20">
@@ -45,37 +48,118 @@ const Footer = () => {
                     </div>
                     <div className="p-4">
                         <h3 className="font-raleway text-lg font-bold mb-5">Contact Us</h3>
-                        <ul className="text-sm flex items-start">
-                            <li className='mr-5'>
-                                <img
+                        <div className='flex flex-col gap-5'>
+                            <ul className="text-sm flex items-start justify-center lg:justify-start">
+                                <li className='mr-5'>
+                                    <img
+                                        data-aos="fade-right"
+                                        data-aos-easing="ease-in-sine"
+                                        data-aos-duration="500"
+                                        data-aos-delay="100"
 
-                                    className='w-8 lg:w-10 h-8 lg:h-10' src={facebook} alt="" />
-                            </li>
-                            <li className='mr-5'>
-                                <img
+                                        className='w-8 lg:w-10 h-8 lg:h-10' src={facebook} alt="" />
+                                </li>
+                                <li className='mr-5'>
+                                    <img
+                                        data-aos="fade-right"
+                                        data-aos-easing="ease-in-sine"
+                                        data-aos-duration="500"
+                                        data-aos-delay="300"
 
-                                    className='w-8 lg:w-10 h-8 lg:h-10' src={twitter} alt="" />
-                            </li>
-                            <li className='mr-5'>
-                                <img
+                                        className='w-8 lg:w-10 h-8 lg:h-10' src={twitter} alt="" />
+                                </li>
+                                <li className='mr-5'>
+                                    <img
+                                        data-aos="fade-right"
+                                        data-aos-easing="ease-in-sine"
+                                        data-aos-duration="500"
+                                        data-aos-delay="500"
 
-                                    className='w-8 lg:w-10 h-8 lg:h-10' src={instagram} alt="" />
-                            </li>
-                            <li className='mr-5'>
-                                <img
+                                        className='w-8 lg:w-10 h-8 lg:h-10' src={instagram} alt="" />
+                                </li>
+                                <li className='mr-5'>
+                                    <img
+                                        data-aos="fade-right"
+                                        data-aos-easing="ease-in-sine"
+                                        data-aos-duration="500"
+                                        data-aos-delay="700"
 
-                                    className='w-8 lg:w-10 h-8 lg:h-10' src={google} alt="" />
-                            </li>
-                            <li className='mr-5'>
-                                <img
+                                        className='w-8 lg:w-10 h-8 lg:h-10' src={google} alt="" />
+                                </li>
+                                <li className='mr-5'>
+                                    <img
+                                        data-aos="fade-right"
+                                        data-aos-easing="ease-in-sine"
+                                        data-aos-duration="500"
+                                        data-aos-delay="900"
 
-                                    className='w-8 lg:w-10 h-8 lg:h-10' src={pinterest} alt="" />
-                            </li>
+                                        className='w-8 lg:w-10 h-8 lg:h-10' src={pinterest} alt="" />
+                                </li>
 
-                        </ul>
+                            </ul>
+                            <ul className='flex flex-col gap-5'>
+                                <li className='flex items-center
+                                justify-center'>
+                                    <img
+                                        data-aos="fade-down"
+                                        data-aos-easing="ease-in-sine"
+                                        data-aos-duration="1000"
+                                        data-aos-delay="1000"
+
+                                        className='w-8 lg:w-10 h-8 lg:h-10' src={location} alt="" />
+                                    <p
+
+                                        data-aos="fade-right"
+                                        data-aos-easing="ease-in-sine"
+                                        data-aos-duration="1100"
+                                        data-aos-delay="900"
+
+                                        className='ml-2'>Aareymilk Colony 400065	Maharashtra	Mumbai</p>
+                                </li>
+                                <li className='flex items-center'>
+                                    <img
+                                        data-aos="fade-down"
+                                        data-aos-easing="ease-in-sine"
+                                        data-aos-duration="1000"
+                                        data-aos-delay="1300"
+
+                                        className='w-8 lg:w-10 h-8 lg:h-10' src={phone} alt="" />
+                                    <p
+
+                                        data-aos="fade-right"
+                                        data-aos-easing="ease-in-sine"
+                                        data-aos-duration="1000"
+                                        data-aos-delay="1100"
+
+                                        className='ml-2'>00 800 4588 1825</p>
+                                </li>
+                                <li className='flex items-center'>
+                                    <img
+                                        data-aos="fade-down"
+                                        data-aos-easing="ease-in-sine"
+                                        data-aos-duration="1000"
+                                        data-aos-delay="1500"
+
+                                        className='w-8 lg:w-10 h-8 lg:h-10' src={message} alt="" />
+                                    <p
+                                        data-aos="fade-right"
+                                        data-aos-easing="ease-in-sine"
+                                        data-aos-duration="1000"
+                                        data-aos-delay="1300"
+
+                                        className='ml-2'>support@gmail.com</p>
+                                </li>
+                            </ul>
+                            <p
+                                className='text-xl font-bold text-center text-black'>&copy; Tomato
+                            </p>
+                        </div>
                     </div>
                 </div>
+                <p
+                    className='text-xl font-bold text-center'>&copy; Tomato</p>
             </div>
+
         </footer>
 
 
