@@ -41,7 +41,7 @@ const Chef = () => {
                             height="290px"
                             // width='100%'
                             threshold={0.90}>
-                            <img className='w-full h-72' src={chef.picture} alt="chef image" />
+                            <img className='w-full h-72 rounded' src={chef.picture} alt="chef image" />
 
                         </LazyLoad>
                         <h4

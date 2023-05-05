@@ -5,6 +5,7 @@ import Trusted from '../Trusted/Trusted';
 import Reviews from '../Reviews/Reviews';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 
 const Common = () => {
     useEffect(() => {
@@ -12,6 +13,7 @@ const Common = () => {
     }, []);
     return (
         <div>
+            <PageTitle titles={'Home'}></PageTitle>
             <Banner></Banner>
             <Chef></Chef>
             <Trusted></Trusted>

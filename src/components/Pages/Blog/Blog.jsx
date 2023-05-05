@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import Pdf from 'react-to-pdf'
 import { HiDocumentDownload } from 'react-icons/hi'
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 
 const Blog = () => {
     const pdfRef = useRef();
@@ -12,6 +13,7 @@ const Blog = () => {
 
     return (
         <div className='mt-40 mb-20 px-5 lg:px-20'>
+            <PageTitle titles={'Blog'}></PageTitle>
             <Pdf targetRef={pdfRef} filename="blog.pdf">
                 {({ toPdf }) => <button
                     onClick={toPdf} options={options}

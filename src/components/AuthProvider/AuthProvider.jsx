@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import auth from '../Firebase/Firebase.init';
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import axios from 'axios';
 
 
@@ -62,6 +62,9 @@ const AuthProvider = ({ children }) => {
         setLoading(true)
         return signInWithPopup(auth, githubProvider)
     }
+    const resetPassword = (email) => {
+        return sendPasswordResetEmail(auth, email)
+    }
 
     const authInfo = {
         signUpUser,
@@ -73,7 +76,8 @@ const AuthProvider = ({ children }) => {
         user,
         loading,
         setReload,
-        logTry
+        logTry,
+        resetPassword
     }
 
     return (

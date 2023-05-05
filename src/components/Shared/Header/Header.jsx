@@ -60,8 +60,10 @@ const Header = () => {
                         // onMouseLeave={() => setShowName(false)}
                         >
                             {
-                                <img title={user?.displayName}
-                                    className='w-10 h-10 rounded-full cursor-pointer' src={user?.photoURL} alt="" />
+                                <Link to={'/profile'}>
+                                    <img title={user?.displayName}
+                                        className='w-10 h-10 rounded-full cursor-pointer' src={user?.photoURL} alt="user photo" />
+                                </Link>
                             }
                             {/* {
                                 showName && <p className='text-lg text-white duration-700 ease-linear block'>{user?.displayName}</p>

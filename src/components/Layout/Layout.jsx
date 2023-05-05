@@ -7,6 +7,9 @@ import NotFound from "../NotFound/NotFound";
 import Login from "../Shared/Authentication/Login/Login";
 import Register from "../Shared/Authentication/Register/Register";
 import RequireAuth from "../Shared/Authentication/RequireAuth/RequireAuth";
+import AboutUs from "../Pages/AboutUs/AboutUs";
+import UpdateProfile from "../Shared/Authentication/UpdateProfile/UpdateProfile";
+import Location from "../Pages/Location/Location";
 
 
 
@@ -44,6 +47,18 @@ const router = createBrowserRouter([
             {
                 path: 'register',
                 element: <Register></Register>
+            },
+            {
+                path: 'profile',
+                element: <UpdateProfile></UpdateProfile>
+            },
+            {
+                path: 'about',
+                element: <AboutUs></AboutUs>
+            },
+            {
+                path: 'map',
+                element: <Location></Location>
             }
         ]
     }

@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import PageTitle from '../../PageTitle/PageTitle';
 
 const Register = () => {
     useEffect(() => {
@@ -98,6 +99,7 @@ const Register = () => {
 
     return (
         <div className='mt-40 mb-20 w-full max-w-sm mx-auto px-5 lg:px-0'>
+            <PageTitle titles={'Register'}></PageTitle>
             <p className='text-center font-raleway font-extrabold text-xl'>Please Register</p>
             <form action="" onSubmit={handleRegisterUser} className='flex flex-col'>
                 <div className='flex flex-col'>

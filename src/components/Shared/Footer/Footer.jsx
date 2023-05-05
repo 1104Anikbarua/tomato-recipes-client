@@ -10,7 +10,10 @@ import { AiOutlineSwapRight } from 'react-icons/ai';
 import phone from '../../../assets/icon/smartphone.png'
 import message from '../../../assets/icon/text.png'
 import location from '../../../assets/icon/placeholder.png'
+
 const Footer = () => {
+    const today = new Date();
+    const year = today.getFullYear();
     return (
         <footer className="bg-black text-white py-8 px-5 lg:px-20">
             <div className="max-w-screen-xl mx-auto">
@@ -22,7 +25,7 @@ const Footer = () => {
                                 Tomato Indian chef website offers great Indian Food in Hotels of its kind in a Five Star Hotel. The cuisine is great, both vegetarian and Non-vegetarian Indian Food.
                             </p>
                             <Link className='text-base font-medium flex items-end hover:text-orange-600'
-                                to={'/'}>Read More
+                                to={'about'}>Read More
 
                                 <AiOutlineSwapRight className='font-semibold text-xl'></AiOutlineSwapRight>
                             </Link>
@@ -100,13 +103,15 @@ const Footer = () => {
                             <ul className='flex flex-col gap-5'>
                                 <li className='flex items-center
                                 justify-center'>
-                                    <img
-                                        data-aos="fade-down"
-                                        data-aos-easing="ease-in-sine"
-                                        data-aos-duration="1000"
-                                        data-aos-delay="1000"
+                                    <Link title='Click Here to see the location in map' to={'map'}>
+                                        <img
+                                            data-aos="fade-down"
+                                            data-aos-easing="ease-in-sine"
+                                            data-aos-duration="1000"
+                                            data-aos-delay="1000"
 
-                                        className='w-8 lg:w-10 h-8 lg:h-10' src={location} alt="" />
+                                            className='w-8 lg:w-10 h-8 lg:h-10' src={location} alt="" />
+                                    </Link>
                                     <p
 
                                         data-aos="fade-right"
@@ -157,7 +162,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <p
-                    className='text-xl font-bold text-center'>&copy; Tomato</p>
+                    className='text-xl font-bold text-center'>&copy; Tomato {year}</p>
             </div>
 
         </footer>
