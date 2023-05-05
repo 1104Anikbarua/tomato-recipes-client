@@ -3,6 +3,7 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { icon } from 'leaflet';
 import locationIcon from '../../../assets/icon/location.png'
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 
 const Location = () => {
 
@@ -22,6 +23,7 @@ const Location = () => {
         <div
             style={{ position: 'relative', zIndex: '1' }}
         >
+            <PageTitle titles={'Map'}></PageTitle>
             <MapContainer
                 center={[19.0760, 72.8777]}
                 zoom={13}

@@ -1,6 +1,14 @@
 import React from 'react';
 import bg from '../../../assets/banner/bg.png'
+import { useNavigate } from 'react-router-dom';
 const Banner = () => {
+
+    const navigate = useNavigate();
+
+    const handleRedirect = () => {
+        navigate('/map')
+    }
+
     return (
         <div className='relative flex flex-col items-center justify-center mt-20 h-[100vh]'>
             <div className='absolute inset-0 w-full bg-cover bg-center filter contrast-50' style={{ backgroundImage: `url(${bg})` }}></div>
@@ -21,6 +29,7 @@ const Banner = () => {
                     className='text-5xl font-raleway font-medium text-white text-center'>Stay With Tomato</p>
 
                 <button
+                    onClick={handleRedirect}
                     data-aos='zoom-in-up'
                     data-aos-duration='1000'
                     data-aos-delay='900'

@@ -7,6 +7,7 @@ import { SlLike } from 'react-icons/sl'
 import { FcLike } from 'react-icons/fc'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 
 const ChefRecipe = () => {
     useEffect(() => {
@@ -35,6 +36,7 @@ const ChefRecipe = () => {
     // console.log(recipeDetail)
     return (
         <div className='mt-40 mb-20 px-5 lg:px-20'>
+            <PageTitle titles={'Details'}></PageTitle>
             <div className='flex flex-col lg:flex-row items-start justify-evenly lg:gap-5'>
                 <div
                     data-aos="zoom-in"
