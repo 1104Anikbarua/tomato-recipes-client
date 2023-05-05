@@ -20,13 +20,13 @@ const Location = () => {
 
     return (
         <div
-            style={{ height: '400px', width: '100%', maxWidth: "400px", zIndex: '-50', margin: '160px auto 80px auto' }}
+            style={{ position: 'relative', zIndex: '1' }}
         >
             <MapContainer
                 center={[19.0760, 72.8777]}
                 zoom={13}
-                scrollWheelZoom={false}
-                style={{ height: '100%', zIndex: '-1' }}
+                scrollWheelZoom={true}
+                style={{ height: '400px', width: '100%', maxWidth: "400px", margin: '160px auto 80px auto', }}
 
             >
                 <TileLayer
